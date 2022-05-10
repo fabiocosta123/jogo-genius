@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /**********************************/
@@ -37,48 +37,94 @@
 /**********************************/
 
 :root {
-	--clr-normal-green:   #00A74A;
-	--clr-normal-red:     #9F0F17;
-	--clr-normal-yellow:  #CCA707;
-	--clr-normal-blue:    #094A8F;
-	
-	--clr-light-green:    #13ff7c;
-	--clr-light-red:      #ff4c4c;
-	--clr-light-yellow:   #fed93f;
-	--clr-light-blue:     #1c8cff;
-	
-	--clr-border:		  #333333;
-	--clr-center:  		  #ECE7EE;
+  --clr-normal-green: #00a74a;
+  --clr-normal-red: #9f0f17;
+  --clr-normal-yellow: #cca707;
+  --clr-normal-blue: #094a8f;
 
-	--clr-counter-bg:	  #32050C;
-	--clr-counter-off:	  #430710;
-	--clr-counter-on:	  #DC0D29;
-	
-	--clr-switch: 	      #3193DE;
+  --clr-light-green: #13ff7c;
+  --clr-light-red: #ff4c4c;
+  --clr-light-yellow: #fed93f;
+  --clr-light-blue: #1c8cff;
 
-	--game-size: 48rem;
-	--game-border: 1.5rem solid var(--clr-border);
+  --clr-border: #333333;
+  --clr-center: #ece7ee;
+
+  --clr-counter-bg: #32050c;
+  --clr-counter-off: #430710;
+  --clr-counter-on: #dc0d29;
+
+  --clr-switch: #3193de;
+
+  --game-size: 48rem;
+  --game-border: 1.5rem solid var(--clr-border);
 }
 
 /**********************************/
 /* 1. Tags
 /**********************************/
 
+html {
+  font-size: 62.5%;
+}
 body {
-	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png');
+  background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png");
+  font-family: "Bungee", Verdana, sans-serif;
 }
 
 /**********************************/
 /* 2. Body
 /**********************************/
-
+.container {
+  width: var(--game-size);
+  margin-left: auto;
+  margin-right: auto;
+}
 /**********************************/
 /* 3. Game
 /**********************************/
-
+.game {
+  width: var(--game-size);
+  height: var(--game-size);
+}
 /**********************************/
 /* 3.1 Pads
 /**********************************/
+.game_pad {
+  width: calc(var(--game-size) / 2);
+  height: calc(var(--game-size) / 2);
+}
+
+.game_pad--tl {
+  background-color: var(--clr-normal-green);
+  border-top-left-radius: 100%;
+}
+
+.game_pad--tr {
+  background-color: var(--clr-normal-red);
+  border-top-right-radius: 100%;
+}
+
+.game_pad--bl {
+  background-color: var(--clr-normal-yellow);
+  border-bottom-left-radius: 100%;
+}
+.game_pad--br {
+  background-color: var(--clr-normal-blue);
+  border-bottom-right-radius: 100%;
+}
+.game_pad--tl.game_pad--active {
+  background-color: var(--clr-light-green);
+}
+.game_pad--tr.game_pad--active {
+  background-color: var(--clr-light-red);
+}
+.game_pad--bl.game_pad--active {
+  background-color: var(--clr-light-yellow);
+}
+.game_pad--br.game_pad--active {
+  background-color: var(--clr-light-blue);
+}
 
 /**********************************/
 /* 3.2 Center
