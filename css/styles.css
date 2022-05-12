@@ -84,11 +84,27 @@ body {
 /* 3. Game
 /**********************************/
 .game {
+  position: relative;
   width: var(--game-size);
   height: var(--game-size);
   display: flex;
   flex-wrap: wrap;
   margin-top: 5rem;
+}
+
+.game_title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-top: -1.5rem;
+  padding-left: 1.2rem;
+  padding-top: 0.7rem;
+}
+
+.reg {
+  font-family: verdana, sans-serif;
+  font-size: 1.8rem;
+  margin-left: -1rem;
+  vertical-align: top;
 }
 /**********************************/
 /* 3.1 Pads
@@ -96,6 +112,7 @@ body {
 .game_pad {
   width: calc(var(--game-size) / 2);
   height: calc(var(--game-size) / 2);
+  border: var(--game-border);
 }
 
 .game_pad--tl {
@@ -134,10 +151,127 @@ body {
 /**********************************/
 /* 3.2 Center
 /**********************************/
+.game_options {
+  position: absolute;
+  background-color: var(--clr-center);
 
+  width: calc(var(--game-size) / 2);
+  height: calc(var(--game-size) / 2);
+
+  top: calc(var(--game-size) / 4);
+  left: calc(var(--game-size) / 4);
+
+  border: var(--game-border);
+  border-radius: 25rem;
+}
 /**********************************/
 /* 3.2.1 GUI
 /**********************************/
+.gui {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.group {
+  margin-right: 2.2rem;
+}
+.group_large {
+  display: flex;
+  width: 10rem;
+  margin-left: 4.5rem;
+}
+
+.gui_label {
+  font-family: "Arima Madurai", cursive;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.gui_label--switch {
+  margin: 0;
+  padding-top: 0.75rem;
+}
+
+.gui_btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 0.2rem;
+  border-radius: 5rem;
+  box-shadow: 0 0.2rem 0.3rem #222;
+  border: 0.4rem solid #444;
+  cursor: pointer;
+}
+
+.gui_btn:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: none;
+}
+
+.gui_btn--start {
+  background-color: red;
+}
+.gui_btn--strict {
+  background-color: yellow;
+}
+.gui_btn--switch {
+  background-color: #222;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 5rem;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.gui_btn--switch::before {
+  content: "";
+  background-color: var(--clr-switch);
+  display: block;
+  position: relative;
+  left: 2.5rem;
+  width: 2.2rem;
+  height: 1.9rem;
+  border-radius: 0.3rem;
+  border: 0.2rem solid #333;
+}
+
+.gui_btn--switch--on::before {
+  left: 0;
+}
+
+.gui_counter {
+  background-color: var(--clr-counter-bg);
+  color: var(--clr-counter-off);
+  font-family: "Iceland", cursive;
+  font-size: 3rem;
+  text-align: right;
+  width: 5.5rem;
+  border: 0.3rem solid #000;
+  border-radius: 1rem;
+  padding-left: 0.3rem;
+}
+
+.gui_counter--on {
+  color: var(--clr-counter-on);
+}
+
+.gui_led {
+  background-color: #32050c;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 0.2rem solid #222;
+  border-radius: 2rem;
+}
+
+.gui_led--active {
+  background-color: red;
+}
 
 /**********************************/
 /* 4. Footer
