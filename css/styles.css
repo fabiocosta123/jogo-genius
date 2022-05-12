@@ -86,6 +86,9 @@ body {
 .game {
   width: var(--game-size);
   height: var(--game-size);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
 }
 /**********************************/
 /* 3.1 Pads
@@ -125,7 +128,9 @@ body {
 .game_pad--br.game_pad--active {
   background-color: var(--clr-light-blue);
 }
-
+.game_pad--btn {
+  cursor: pointer;
+}
 /**********************************/
 /* 3.2 Center
 /**********************************/
@@ -137,3 +142,8 @@ body {
 /**********************************/
 /* 4. Footer
 /**********************************/
+footer {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1rem;
+}
