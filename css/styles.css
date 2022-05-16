@@ -92,17 +92,17 @@ body {
   margin-top: 5rem;
 }
 .game_title {
-  font-size: 4rem;
+  font-size: 3.8rem;
   text-transform: uppercase;
-  margin-top: -1.5rem;
-  padding-left: 17.2rem;
-  padding-top: 1.7rem;
+  padding-left: 15rem;
+  margin-top: -30.5rem;
+  z-index: 0;
 }
 
 .reg {
   font-family: verdana, sans-serif;
   font-size: 1.8rem;
-  margin-left: -1rem;
+  margin-left: 0.5rem;
   vertical-align: top;
 }
 /**********************************/
@@ -167,19 +167,21 @@ body {
 /* 3.2.1 GUI
 /**********************************/
 .gui {
-  padding-left: 1.5rem;
+  padding-left: 16.5rem;
+  padding-top: 23.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
+  position: absolute;
 }
 
 .group {
   margin-right: 2.2rem;
 }
-.group_large {
+.group-large {
   display: flex;
-  width: 10rem;
-  margin-left: 4.5rem;
+  width: 9rem;
+  margin-left: 3.5rem;
 }
 
 .gui_label {
@@ -276,7 +278,7 @@ body {
 /* 4. Footer
 /**********************************/
 footer {
-  text-align: center;
   margin-top: 5rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  margin-left: -16.5rem;
 }
