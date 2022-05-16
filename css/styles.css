@@ -91,12 +91,11 @@ body {
   flex-wrap: wrap;
   margin-top: 5rem;
 }
-
 .game_title {
   font-size: 4rem;
   text-transform: uppercase;
-  margin-top: -30.5rem;
-  padding-left: 14.2rem;
+  margin-top: -1.5rem;
+  padding-left: 17.2rem;
   padding-top: 1.7rem;
 }
 
