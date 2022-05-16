@@ -1,10 +1,13 @@
 <<<<<<< HEAD
+
 # jogo-genius
+
 Jogo que aguça a memória. O objetivo é repetir a sequencia dada pelo jogo.
 
 ##
-DOM game é um jogo feito exclusivamente com o DOM, sem canvas e sem flash. Eles são essencialmente construídos como páginas da web, onde DIVs são elementos de jogo estilizados com folhas de estilo CSS e os elementos são animados usando javascript. O objetivo nesse projeto é aprender como criar jogo com javascript para iniciantes.
-=======
+
+# DOM game é um jogo feito exclusivamente com o DOM, sem canvas e sem flash. Eles são essencialmente construídos como páginas da web, onde DIVs são elementos de jogo estilizados com folhas de estilo CSS e os elementos são animados usando javascript. O objetivo nesse projeto é aprender como criar jogo com javascript para iniciantes.
+
 # Genius
 
 Você já jogou Genius?
@@ -35,4 +38,5 @@ Genius era um brinquedo muito popular na década de 1980. Distribuído pela Estr
 Dica : No CSS, ao definir html {font-size: 62.5%}, estamos dizendo que 1rem que equivale a 16px, passe a
 valer 10px, ficando mais facil fazer uma conversão de pix para rem. Por exemplo, se precisar converter
 30px, basta apenas dividir 30 por 10 = 3rem; e não mais 30 por 16 (antes da formatação no CSS)
->>>>>>> c3bc2a2f89f6919ac1ef0c4becd93536bb802cd3
+
+> > > > > > > c3bc2a2f89f6919ac1ef0c4becd93536bb802cd3
