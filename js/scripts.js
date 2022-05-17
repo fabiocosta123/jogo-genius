@@ -72,7 +72,10 @@ const startGame = () => {
 const setScore = () => {};
 
 const newColor = () => {
-  Math.floor(Math.random() * 4);
+  _data.gameOn.push(Math.floor(Math.random() * 4));
+  _data.score++;
+
+  setScore();
 };
 
 const playSequence = () => {};
