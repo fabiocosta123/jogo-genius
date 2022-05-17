@@ -66,25 +66,68 @@ _gui.pads.forEach((pad) => {
 const startGame = () => {
   blink("--", () => {
     newColor();
+    playSequence();
   });
 };
 
-const setScore = () => {};
+const setScore = () => {
+  const score = _data.score.toString();
+  const display = "00".substring(0, 2 - score.length) + score;
+  _gui.counter.innerHTML = display;
+};
 
 const newColor = () => {
-  _data.gameOn.push(Math.floor(Math.random() * 4));
+  _data.gameSequence.push(Math.floor(Math.random() * 4));
   _data.score++;
 
   setScore();
 };
 
-const playSequence = () => {};
+const playSequence = () => {
+  let counter = 0,
+    padOn = true;
+
+  _data.playerSequence = [];
+  _data.playerCanPlay = false;
+
+  const interval = setInterval(() => {
+    if (!_data.gameOn) {
+      clearInterval(interval);
+      disablePads();
+      return;
+    }
+    if (padOn) {
+      if (counter === _data.gameSequence.length) {
+        clearInterval(interval);
+        disablePads();
+        waitForPlayerClick();
+        _data.playerCanPlay = true;
+        return;
+      }
+      const sndId = _data.gameSequence[counter];
+      const pad = _gui.pads[sndId];
+
+      _data.sounds[sndId].play();
+      pad.classList.add("game_pad--active");
+      counter++;
+    } else {
+      disablePads();
+    }
+    padOn = !padOn;
+  }, 750);
+};
 
 const blink = (text, callback) => {
   let counter = 0;
   on = true;
   _gui.counter.innerHTML = text;
+
   const interval = setInterval(() => {
+    if (!_data.gameOn) {
+      clearInterval(interval);
+      _gui.counter.classList.remove("gui_counter--on");
+      return;
+    }
     if (on) {
       _gui.counter.classList.remove("gui_counter--on");
     } else {
@@ -98,7 +141,13 @@ const blink = (text, callback) => {
   }, 250);
 };
 
-const waitForPlayerClick = () => {};
+const waitForPlayerClick = () => {
+  _data.timeout = setTimeout(() => {
+    if (!_data.playerCanPlay) return;
+    disablePads();
+    playSequence();
+  }, 5000);
+};
 
 const resetOrPlayAgain = () => {};
 
