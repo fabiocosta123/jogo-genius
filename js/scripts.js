@@ -53,7 +53,9 @@ _gui.strict.addEventListener("click", () => {
   console.log(_data.strict);
 });
 
-_gui.start.addEventListener("click", () => {});
+_gui.start.addEventListener("click", () => {
+  startGame();
+});
 
 const padListener = (e) => {};
 
@@ -61,15 +63,37 @@ _gui.pads.forEach((pad) => {
   pad.addEventListener("click", padListener);
 });
 
-const startGame = () => {};
+const startGame = () => {
+  blink("--", () => {
+    newColor();
+  });
+};
 
 const setScore = () => {};
 
-const newColor = () => {};
+const newColor = () => {
+  Math.floor(Math.random() * 4);
+};
 
 const playSequence = () => {};
 
-const blink = (text, callback) => {};
+const blink = (text, callback) => {
+  let counter = 0;
+  on = true;
+  _gui.counter.innerHTML = text;
+  const interval = setInterval(() => {
+    if (on) {
+      _gui.counter.classList.remove("gui_counter--on");
+    } else {
+      _gui.counter.classList.add("gui_counter--on");
+      if (++counter === 3) {
+        clearInterval(interval);
+        callback();
+      }
+      on = !on;
+    }
+  }, 250);
+};
 
 const waitForPlayerClick = () => {};
 
