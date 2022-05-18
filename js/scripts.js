@@ -57,7 +57,31 @@ _gui.start.addEventListener("click", () => {
   startGame();
 });
 
-const padListener = (e) => {};
+const padListener = (e) => {
+  if (!_data.playerCanPlay) return;
+
+  let soundId;
+  _gui.pads.forEach((pad, key) => {
+    if (pad === e.target) soundId = key;
+  });
+  e.target.classList.add("game_pad--active");
+  _data.sounds[soundId].play();
+  _data.playerSequence.push(soundId);
+
+  e.target.classList.remove("game_pad--active");
+
+  const currentMove = _data.playerSequence.length - 1;
+
+  if (_data.playerSequence[currentMove] !== _data.gameSequence[currentMove]) {
+    _data.playerCanPlay = false;
+    disablePads();
+    playSequence();
+  } else if (currentMove === _data.gameSequence.length - 1) {
+    newColor();
+    playSequence();
+  }
+  waitForPlayerClick();
+};
 
 _gui.pads.forEach((pad) => {
   pad.addEventListener("click", padListener);
@@ -136,12 +160,13 @@ const blink = (text, callback) => {
         clearInterval(interval);
         callback();
       }
-      on = !on;
     }
+    on = !on;
   }, 250);
 };
 
 const waitForPlayerClick = () => {
+  clearTimeout(_data.timeout);
   _data.timeout = setTimeout(() => {
     if (!_data.playerCanPlay) return;
     disablePads();
