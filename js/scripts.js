@@ -33,6 +33,7 @@ _soundUrls.forEach((sndPath) => {
 
 _gui.switch.addEventListener("click", () => {
   _data.gameOn = _gui.switch.classList.toggle("gui_btn--switch--on");
+
   _gui.counter.classList.toggle("gui_counter--on");
   _gui.counter.innerHTML = "--";
 
@@ -51,13 +52,13 @@ _gui.switch.addEventListener("click", () => {
 _gui.strict.addEventListener("click", () => {
   if (!_data.gameOn) return;
   _data.strict = _gui.led.classList.toggle("gui_led--active");
-  console.log(_data.strict);
 });
 
 _gui.start.addEventListener("click", () => {
   startGame();
 });
 
+//função chama toda vez que o usuário clica no pad
 const padListener = (e) => {
   if (!_data.playerCanPlay) return;
 
@@ -120,6 +121,7 @@ const playSequence = () => {
 
   _data.playerSequence = [];
   _data.playerCanPlay = false;
+
   changePadCursor("auto");
 
   const interval = setInterval(() => {
@@ -134,6 +136,7 @@ const playSequence = () => {
         disablePads();
         waitForPlayerClick();
         changePadCursor("pointer");
+
         _data.playerCanPlay = true;
         return;
       }
@@ -176,6 +179,7 @@ const blink = (text, callback) => {
 
 const waitForPlayerClick = () => {
   clearTimeout(_data.timeout);
+
   _data.timeout = setTimeout(() => {
     if (!_data.playerCanPlay) return;
     disablePads();
@@ -184,7 +188,7 @@ const waitForPlayerClick = () => {
 };
 
 const resetOrPlayAgain = () => {
-  _data.playerCanPlay = false;
+  _data.playerCanPlay = false; // esse comando faz com que jogador não jogue
 
   if (_data.strict) {
     blink("!!", () => {
