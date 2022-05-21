@@ -20,10 +20,10 @@ const _gui = {
 };
 
 const _soundUrls = [
-  "audio/simonSound1.mp3",
-  "audio/simonSound2.mp3",
-  "audio/simonSound3.mp3",
-  "audio/simonSound4.mp3",
+  "simonSound1.mp3",
+  "simonSound2.mp3",
+  "simonSound3.mp3",
+  "simonSound4.mp3",
 ];
 
 _soundUrls.forEach((sndPath) => {
