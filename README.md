@@ -12,6 +12,6 @@ Genius era um brinquedo muito popular na década de 1980. Distribuído pela Estr
 
 > DOM game é um jogo feito exclusivamente com o DOM, sem canvas e sem flash. Eles são essencialmente construídos como páginas da web, onde DIVs são elementos de jogo estilizados com folhas de estilo CSS e os elementos são animados usando javascript. O objetivo nesse projeto é aprender como criar jogo com javascript para iniciantes.
 
-#colocar a fonte do projeto
+Projeto inspirado pelo Inkasa Dev
 #explicar como fiz o projeto
 #colocar tecnologia usada no projeto
