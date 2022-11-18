@@ -2,7 +2,6 @@ const _data = {
   gameOn: false,
   timeout: undefined,
   sounds: [],
-
   strict: false,
   playerCanPlay: false,
   score: 0,
@@ -84,7 +83,7 @@ const padListener = (e) => {
       playSequence();
     }
     waitForPlayerClick();
-  }, 250);
+  }, 300);
 };
 
 _gui.pads.forEach((pad) => {
@@ -104,11 +103,13 @@ const setScore = () => {
   _gui.counter.innerHTML = display;
 };
 
+//faz piscar as cores de forma aleatoria - flashes colors randomly
 const newColor = () => {
   if (_data.score === 20) {
     blink("**", startGame);
     return;
   }
+
   _data.gameSequence.push(Math.floor(Math.random() * 4));
   _data.score++;
 
