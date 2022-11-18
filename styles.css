@@ -84,19 +84,16 @@ body {
 /* 3. Game
 /**********************************/
 .game {
-  position: relative;
-  width: var(--game-size);
-  height: var(--game-size);
   display: flex;
   flex-wrap: wrap;
   margin-top: 5rem;
+  justify-content: center;
+  position: relative;
 }
 .game_title {
   font-size: 3.8rem;
   text-transform: uppercase;
-  padding-left: 15rem;
-  margin-top: -30.5rem;
-  z-index: 0;
+  margin: 0;
 }
 
 .reg {
@@ -153,26 +150,25 @@ body {
 .game_options {
   position: absolute;
   background-color: var(--clr-center);
-
   width: calc(var(--game-size) / 2);
   height: calc(var(--game-size) / 2);
-
   top: calc(var(--game-size) / 4);
   left: calc(var(--game-size) / 4);
-
   border: var(--game-border);
   border-radius: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 /**********************************/
 /* 3.2.1 GUI
 /**********************************/
 .gui {
-  padding-left: 16.5rem;
-  padding-top: 23.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  position: absolute;
+  justify-content: center;
 }
 
 .group {
@@ -280,7 +276,6 @@ body {
 footer {
   margin-top: 5rem;
   font-size: 1.5rem;
-  margin-left: -16.5rem;
 }
 
 @media (max-width: 600px) {
